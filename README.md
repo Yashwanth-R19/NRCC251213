@@ -1,4 +1,4 @@
-# 🌩️ Automatic Cloud & Shadow Mask Generation
+#  Automatic Cloud & Shadow Mask Generation
 
 ### from Resourcesat-2 / Resourcesat-2A LISS-IV Satellite Images
 
@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 Clouds and their shadows significantly reduce the usability of satellite imagery in Earth observation tasks such as land-use classification, agriculture monitoring, and disaster management.
 
@@ -23,7 +23,7 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## 👥 Team
+##  Team
 
 * **Yashwanth R.** — SSN College of Engineering
 * **Nitheesh K.** — Vellore Institute of Technology
@@ -32,7 +32,7 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## 🛰️ Dataset
+##  Dataset
 
 * **Sensor:** LISS-IV
 * **Satellites:** Resourcesat-2, Resourcesat-2A
@@ -58,28 +58,28 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## ⚙️ Pipeline Overview
+##  Pipeline Overview
 
-### 1️⃣ Preprocessing
+###  Preprocessing
 
 * Digital Number → Radiance → TOA Reflectance conversion
 * Sun-angle correction using ephemeris calculations
 * Normalization to `[0,1]`
 * Export as **Cloud Optimized GeoTIFF (COG)**
 
-### 2️⃣ Dataset Labeling
+###  Dataset Labeling
 
 * Cloud masks generated via reflectance thresholding
 * Shadow regions manually digitized as polygons in QGIS
 * Combined into single multi-class raster masks
 
-### 3️⃣ Model Architecture
+###  Model Architecture
 
 * **U-Net** for semantic segmentation
 * **ResNet encoder** for strong feature extraction
 * Pixel-wise multi-class classification
 
-### 4️⃣ Training Strategy
+###  Training Strategy
 
 * Framework: **PyTorch**
 * Loss: `CrossEntropyLoss` with class weighting
@@ -87,7 +87,7 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 * Scheduler: ReduceLROnPlateau
 * Augmentations via **Albumentations**
 
-### 5️⃣ Inference & Post-Processing
+###  Inference & Post-Processing
 
 * Full-scene inference (no tiling)
 * Mask raster generation
@@ -96,7 +96,7 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## 📊 Model Performance (Best Model)
+##  Model Performance (Best Model)
 
 | Metric    | Value      |
 | --------- | ---------- |
@@ -109,7 +109,7 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```text
 .
@@ -147,15 +147,15 @@ The system supports **end-to-end preprocessing, inference, post-processing, and 
 
 ---
 
-## 🚀 How to Run Inference
+##  How to Run Inference
 
-### 1️⃣ Setup Environment
+###  Setup Environment
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Run Inference Pipeline
+###  Run Inference Pipeline
 
 Follow the step-by-step instructions inside:
 
@@ -163,7 +163,7 @@ Follow the step-by-step instructions inside:
 NRCC251213_Inference_code/helper.txt
 ```
 
-### 3️⃣ (Optional) Launch GUI
+###  (Optional) Launch GUI
 
 ```bash
 streamlit run app.py
@@ -173,7 +173,7 @@ This opens a browser-based interface for fast visualization and export.
 
 ---
 
-## 🧠 Key Learnings
+##  Key Learnings
 
 * Full-scene inference significantly outperforms tiled inference
 * Cloud detection is robust even without SWIR bands
@@ -182,7 +182,7 @@ This opens a browser-based interface for fast visualization and export.
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 * Expand labeled dataset across seasons and terrains
 * Improve shadow detection with contextual constraints
@@ -192,13 +192,13 @@ This opens a browser-based interface for fast visualization and export.
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 We sincerely thank **ISRO NRSC** and the **Bhoonidhi portal** for organizing this challenge and providing high-quality satellite datasets and documentation. This project was a valuable hands-on introduction to **remote sensing, geospatial data processing, and deep learning**.
 
 ---
 
-## 📜 License
+##  License
 
 This repository is released **for academic and research purposes only**.
 
